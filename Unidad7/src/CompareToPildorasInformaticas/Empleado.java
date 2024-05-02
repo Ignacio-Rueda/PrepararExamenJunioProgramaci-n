@@ -1,4 +1,4 @@
-package CompareTo;
+package CompareToPildorasInformaticas;
 
 import java.time.LocalDate;
 
