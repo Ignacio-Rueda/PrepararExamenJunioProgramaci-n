@@ -22,7 +22,7 @@ public class Test {
             System.out.println(e);
         }
         System.out.println("USANDO UN ITERADOR");
-        Iterator i = listaEmpleados.iterator();
+        Iterator <Empleado> i = listaEmpleados.iterator();
         while(i.hasNext()){
             System.out.println(i.next());
         }
