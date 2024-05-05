@@ -10,11 +10,13 @@ public class Test {
     public static void main(String args[]){
     
         List<Empleado> listaEmpleados = new ArrayList<Empleado>();
+        Empleado pedro = new Empleado("Pedro",40,2500);
         
         listaEmpleados.add(new Empleado("Juan",35,3500));
-        listaEmpleados.add(new Empleado("Pedro",40,2500));
+        listaEmpleados.add(pedro);
         listaEmpleados.add(new Empleado("Eva",25,3750));
-        
+        //Conocer la posición de un elemento, si dicho elemento no está, retornará -1
+        System.out.println(listaEmpleados.indexOf(pedro));
         //Insertar en una posición determinada.
         listaEmpleados.add(1, new Empleado("Tomás",47,1350));
 
@@ -47,6 +49,9 @@ public class Test {
         while(it.hasNext()){
             System.out.println(it.next());
         }
+        
+        
+      
         
  
         
