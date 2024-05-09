@@ -13,7 +13,7 @@ public class Token {
         int contadorPalabras = 0;
         int numeroDenumeros = 0;
         try {
-            sTokenizer = new StreamTokenizer(new FileReader(""));
+            sTokenizer = new StreamTokenizer(new FileReader(nombreFichero));
             while (sTokenizer.nextToken() != StreamTokenizer.TT_EOF) {
                 if (sTokenizer.ttype == StreamTokenizer.TT_WORD) {
                     contadorPalabras++;
@@ -31,7 +31,8 @@ public class Token {
     }
 
     public static void main(String[] args) {
-        new Token().contarPlabrasYNumeros("C:\\ficheros\\datos.txt");
+        String ruta = System.getProperty("user.dir")+File.separator+"src"+File.separator+"recursos"+File.separator+"datos.txt"; 
+        new Token().contarPlabrasYNumeros(ruta);
        
 
     }
