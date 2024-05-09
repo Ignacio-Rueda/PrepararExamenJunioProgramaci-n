@@ -7,7 +7,13 @@ import java.io.IOException;
 import java.io.StreamTokenizer;
 
 public class Token {
-
+    /**
+     * TT_WORD indica que el token es una palabra.
+     * TT_NUMBER indique que el token es un número.
+     * TT_EOL indica que se ha leído el fin de línea.
+     * TT_EOF inica que se ha llegado al fin del flujo de entrada.
+     * @param nombreFichero 
+     */
     public void contarPlabrasYNumeros(String nombreFichero) {
         StreamTokenizer sTokenizer = null;
         int contadorPalabras = 0;
