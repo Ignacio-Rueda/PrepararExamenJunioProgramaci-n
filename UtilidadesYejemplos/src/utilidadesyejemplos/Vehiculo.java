@@ -57,9 +57,35 @@ public class Vehiculo {
     public static Vehiculo crearVehiculo(){
         return new Vehiculo(Vehiculo.MATRICULA_DEFECTO,LocalDate.now(),Vehiculo.CAPACIDAD_MAX_DEPOSITO);
     }
+    public static Vehiculo[] crearVehiculos(){
+        return new Vehiculo[]{
+            new Vehiculo(Vehiculo.MATRICULA_DEFECTO,LocalDate.now(),Vehiculo.CAPACIDAD_MAX_DEPOSITO),
+            new Vehiculo(Vehiculo.MATRICULA_DEFECTO,LocalDate.now(),Vehiculo.CAPACIDAD_MAX_DEPOSITO),
+            new Vehiculo(Vehiculo.MATRICULA_DEFECTO,LocalDate.now(),Vehiculo.CAPACIDAD_MAX_DEPOSITO)
+        };
+    }
     ////////////////////////////////////////////////////////////////////////////
     //MÉTODOS
     ////////////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////////////
+    //MÉTODO CLONAR VEHICULO
+    ////////////////////////////////////////////////////////////////////////////
+    public Vehiculo clonar(Vehiculo original)throws NullPointerException{
+        if(original ==null){
+            throw new NullPointerException("Vehículo no válido");
+        }
+        //No es necesario realizar más comprobaciones.
+        //Si el objeto es un vehiculo creado,sus valores han de ser correctos.
+        Vehiculo copia = new Vehiculo(original);//Lo estamos pasando al constructor copia
+        //Ya tendríamosun nuevo vehículo "copia" pero "nuevo"
+        //Ahora tenemos que darle los mismos estados que el vehiculo original
+        copia.estadoMotor = original.estadoMotor;
+        copia.kilometrosTotales = original.kilometrosTotales;
+        //Actualizamos kilómetros totales de la flota.
+        Vehiculo.kilometrosTotalesFlota+=original.kilometrosTotales;
+        return copia;
+    }
+    
     /**
      * USO DE VARAGS
      */
