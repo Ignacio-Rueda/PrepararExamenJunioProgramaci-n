@@ -22,5 +22,9 @@ public class Vehiculo {
     public final static double CAPACIDAD_MIN_DEPOSITO = 150.0;
     public final static double MIN_CONSUMO_MEDIO = 1.0;
     public final static double MAX_CONSUMO_MEDIO = 18.0;
+    
+    
+    
+    public 
    
 }
