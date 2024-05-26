@@ -22,15 +22,44 @@ public class Vehiculo {
     public final static double CAPACIDAD_MIN_DEPOSITO = 150.0;
     public final static double MIN_CONSUMO_MEDIO = 1.0;
     public final static double MAX_CONSUMO_MEDIO = 18.0;
+    public final static String MATRICULA_DEFECTO = "0000AAA";
     
-    
+    ////////////////////////////////////////////////////////////////////////////
+    //CONSTRUCTORES
+    ////////////////////////////////////////////////////////////////////////////
     
     public Vehiculo(double capacidadDeposito,String matricula,LocalDate fechaMatriculacion){
-        this.capacidadDeposito = capacidadDeposito;
+        this(Vehiculo.MATRICULA_DEFECTO,fechaMatriculacion,capacidadDeposito);
+    }
+    public Vehiculo(String matricula,LocalDate fechaMatriculacion,double capacidadDeposito) throws IllegalArgumentException{
+        if(matricula == null){
+            throw new IllegalArgumentException ("Matrícula no válida (null)");
+        }
+        if(!matricula.matches("[0-9]{4}[BCDFGHJKLMNPRSTVWXYZ]{3}")){
+            throw new IllegalArgumentException("Matríocula no válida");
+        }
+        
         this.matricula = matricula;
         this.fechaMatriculacion = fechaMatriculacion;
+        this.capacidadDeposito = capacidadDeposito;
+          
+    }
+    ////////////////////////////////////////////////////////////////////////////
+    //CONSTRUCTOR EN COPIA
+    ////////////////////////////////////////////////////////////////////////////
+    public Vehiculo (Vehiculo vehiculo)throws NullPointerException{
+        this(vehiculo.matricula,vehiculo.fechaMatriculacion,vehiculo.capacidadDeposito);
     }
     
+    ////////////////////////////////////////////////////////////////////////////
+    //MÉTODO DE FÁBRICA
+    ////////////////////////////////////////////////////////////////////////////
+    public static Vehiculo crearVehiculo(){
+        return new Vehiculo(Vehiculo.MATRICULA_DEFECTO,LocalDate.now(),Vehiculo.CAPACIDAD_MAX_DEPOSITO);
+    }
+    ////////////////////////////////////////////////////////////////////////////
+    //MÉTODOS
+    ////////////////////////////////////////////////////////////////////////////
     /**
      * USO DE VARAGS
      */

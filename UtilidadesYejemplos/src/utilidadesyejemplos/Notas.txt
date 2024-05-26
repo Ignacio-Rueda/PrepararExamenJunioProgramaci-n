@@ -104,3 +104,31 @@
     
     La recomendación es usar this.nombre cada vez que usemos en un método-> mejora
     la legibilidad.
+
+    Al llevar a cabo comprobaciones sobre parámetros que son referencias a objetos
+    (por ejemplo String o LocalDate) debes tener la precaución de comprobar primero
+    que NO son "null" porque si intentas acceder a un miembro(método o atributo) de
+    una referencia null, se produce un error saltando una excepción NullPointerException.
+    Cuando sepas que no es null, puedes intentar acceder al método que consideres
+    oportuno.
+
+    Se puede llamar a un constructor de una clase desde otro constructor de la misma clase:
+    con el método this(), dentro de un cosntructor sirve para hacer una llmada al 
+    constructor de la misma clase cuya lista de argumentos coincida con los que se le pasa a
+    this().
+    La única restricción es que, de invocar a this(), dentro de un constructor,
+    ésta tiene que ser obligatoriamente la primera sentencia del nuevo constructor.
+
+    Podemos tener un constructor que se encargue de todo el "trabajo duro" de comprobaciones
+    y asignaciones y el resto de constructores (que normalmente tendrán una menor cantidad de parámetros) 
+    harán uso de este constructor más "inteligente", evitando tener que repetir el código 
+    que éste contiene.
+
+    Es conveniente tener valores por omisión(así como máximos y mínimos) en 
+    constantes de clase para no tener que escribirlos una y otra vez a lo largo del código.
+
+    Método de fábrica:
+        -Debe ser estático.
+        -Devolver un objeto del mismo tipo que la clase a la que pertenece.
+        -Llamar a algún constructor de la clase con el operador new.
+        -Devolver la referencia obtenida con el operador new mediante una sentencia return.
