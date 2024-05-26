@@ -132,3 +132,7 @@
         -Devolver un objeto del mismo tipo que la clase a la que pertenece.
         -Llamar a algún constructor de la clase con el operador new.
         -Devolver la referencia obtenida con el operador new mediante una sentencia return.
+
+    Cada vez que utilicemos un método de una clase (incluido el constructor) debemos revisar si existe la
+    posibilidad de que puedan lanzarse excepciones desde ese método en caso afirmativo:
+    Habrá que encerrar la llamada a ese método en un bloque try-catch
