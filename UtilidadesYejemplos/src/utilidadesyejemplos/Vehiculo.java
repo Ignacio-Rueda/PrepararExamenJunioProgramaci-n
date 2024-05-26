@@ -48,5 +48,25 @@ public class Vehiculo {
         }
         return nombre+resultado;
     }
-   
+    
+    /**
+     * Método que devuelve un valor entero aleatorio entre 1 y 6.
+     */
+    byte valorAzar(){
+       return (byte) ((byte)(Math.random()*6)+1);
+   }
+    
+    /**
+     * Excepciones.
+     * 
+     */
+    public void arrancar() throws IllegalStateException{
+        if(this.estadoMotor){
+            throw new IllegalStateException("Vehículo ya en marcha");
+        }
+        //Solo se ejecutará si no salta la excepción.
+        this.estadoMotor = true;
+        Vehiculo.vehiculosArrancados++;
+        
+    }
 }

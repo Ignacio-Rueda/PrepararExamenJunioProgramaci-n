@@ -91,4 +91,16 @@
     la lista de argumentos variables.
     Es posible utilizar varags con parámetros fijos. La lista de parámetros variable
     debe aparecer al final (y solo puede aparecer una)
+
+    Se permite añadir el modificador "final" a los parámetros de un método, para
+    que el parámetro no pueda ser modificado.
+
+    El tipo de valor que devuelva la sentencia return debería ser del mismo tipo 
+    o de un tipo COMPATIBLE con el tipo del valor de retorno definido en la cabecera
+    del método.
+
+    Se recomienda NO incluir mas de un return en un método, que debería ir al final
+    del mismo, como salida natural.
     
+    La recomendación es usar this.nombre cada vez que usemos en un método-> mejora
+    la legibilidad.
