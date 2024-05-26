@@ -55,3 +55,40 @@
     En la cabecera del método, aunque no es obligatorio, sí puede ser conveniente
     Declarar una lista de nobres de excepciones separadas por comas, utilizamos
     la palabra reservada "throws" seguida de dicha lista.
+
+    Un método "static" (método estático o de clase) es un método desde cuya impl
+    ementación no se accede a atributos de objeto. Desde este tipo de métodos só
+    lo se puede acceder a atributos de la clase (estáticos) Estos métodos pueden
+    ser invocados sin necesidad de tener un objeto de la clase instanciado.
+
+    La llamada a métodos estáticos, se hace normalmente usando el nombre de la 
+    propia clase y no el de una instancia (objeto)Pues se trata, realmente de 
+    un método de clase.
+
+    Un método "final" es un método que no permite ser redefinido o sobreescrito
+    por clases descendientes.
+
+    El modificador "abstract" sirve para indicar que un método es abstracto.
+    El método no tendrá implementación, solo la declaración terminada en punto y
+    coma,en lugar de las llaves del cuerpo.
+
+    La implementación será realizada en las clases descendientes. Un método sólo
+    puede ser declarado como "abstract" si se encuenta dentro de una clase abstract
+
+    El modificador "synchronized" obligará a que cuando un proceso esté ejecutando
+    éste método, el resto de procesos que tengan que llamar a ese mismo método 
+    deberán esperar a que el otro proceso termine. Puede ser útil si sabes que un
+    determinado método va a poder ser llamado concurrentemente por varios procesos
+    a la vez.
+
+    En Java, *el paso de parámetros es siempre por valor* excepto en el caso de
+    los tipos referenciados (por ejemplo objetos) en cuyo caso se está pasando 
+    efectivamente una referencia.
+
+    Varags-> permite que un método pueda tener un número variable de parámetros.
+    Para utilizar este mecanismo se coloca un 1-tipo, 2-unos puntos suspensivos (...)
+    espacio en blanco y a continuación el 3-nombre del parámetro que aglutinará
+    la lista de argumentos variables.
+    Es posible utilizar varags con parámetros fijos. La lista de parámetros variable
+    debe aparecer al final (y solo puede aparecer una)
+    

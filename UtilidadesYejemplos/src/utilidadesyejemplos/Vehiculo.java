@@ -25,6 +25,28 @@ public class Vehiculo {
     
     
     
-    public 
+    public Vehiculo(double capacidadDeposito,String matricula,LocalDate fechaMatriculacion){
+        this.capacidadDeposito = capacidadDeposito;
+        this.matricula = matricula;
+        this.fechaMatriculacion = fechaMatriculacion;
+    }
+    
+    /**
+     * USO DE VARAGS
+     */
+    public int sumar(int...numeros){
+        int resultado = 0;
+        for(Integer num:numeros){
+            resultado+=num;
+        }
+        return resultado;
+    }   
+    public String presentacionSuma(String nombre,double...numeros){
+        double resultado = 0;
+        for(Double i:numeros){
+            resultado+=i;
+        }
+        return nombre+resultado;
+    }
    
 }
