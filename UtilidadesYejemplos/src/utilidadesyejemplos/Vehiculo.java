@@ -1,10 +1,70 @@
-
 package utilidadesyejemplos;
 
+import java.time.LocalDate;
 
 public class Vehiculo {
+
+    //ATRIBUTOS DE OBJETO.
+    //->Atributos de objeto constantes.
+    private final double capacidadDeposito;
+    private final String matricula;
+    private final LocalDate fechaMatriculacion;
+    //->Atributos de objeto variables.
+    private boolean estadoMotor;
+    private double kilometrosTotales;
+    private double kilometrosParciales;
+    //ATRIBUTOS ESTÁTICOS O DE CLASE
+    private static short vehiculosCreados;//Se incrementará en uno, cada vez que se cree un nuevo vehículo.Este valor siempre será el mismo para todo lso vehiculos
+    private static double kilometrosTotalesFlota;
+    private static short vehiculosArrancados;
+
+    public final static double CAPACIDAD_MAX_DEPOSITO = 10.0;
+    public final static double CAPACIDAD_MIN_DEPOSITO = 150.0;
+    public final static double MIN_CONSUMO_MEDIO = 1.0;
+    public final static double MAX_CONSUMO_MEDIO = 18.0;
     /**
-     * Lo recomendable es que los atributos lleven el modificador -> private.
-     * Si se quiere acceder o manipular que se tenga que hacer a través de los métodos de la clase
-    */    
+     * - Algunos atributos no van a cambiar nunca de valor una vez que se
+     * fabrique el vehículo -> inmutables,una vez que se le asigne un valor ya
+     * no podrá ser cambiado ->final - Otros, podrán ir modificando su valor a
+     * lo largo del tiempo - El nombre de los atributos constantes (final) se
+     * escribe con todas las letras en mayúsculas, separando las palabras con el
+     * caracter _ Aunque hay una excepción - El modificador static, hace que el
+     * atributo sea común para todos los objetos de una misma clase, es decir,
+     * todos los atributos de la clase, compartirán ese mismo atributo con el
+     * mismo valor ->atributo estático o atributo de clase o varible de clase.
+     */
+    /**
+     * El convenio estándar indica que aquellos elementos que sean de tipo
+     * constante (final) deberían seguir la nomenclatura de usar siempre
+     * mayúsculas y guión bajo para separa cada palabra, sin embargo, hemos
+     * visto atributos constantes usando "lower camel case" en lugar de las
+     * mayúsculas, Es habitual que cuando se trate de ->atributos de objeto (no
+     * de variables locales) se use este modelo para distinguirlo de las
+     * constantes que sean atributos de clase; Los atributos de clase,
+     * normalmente serán públicos pues contienen información sobre
+     * configuraciones,restricciones, que es interesante qeu sea visible desde
+     * fuera de la clase.
+     *
+     *
+     */
+
+    /**
+     * MODIFICADOR STATIC. Gracias al modificador static, NO se creará un
+     * atributo vehiculosCreados, cada vez que se instancie un objeto vehiculo.
+     * Si no que este atributo existirá antes de la creación de ningún objeto.
+     */
+    /**
+     * ATRIBUTOS DE CLASE CONSTANTE. Podría interesarnos tener almacenada cuál
+     * es la máxima y mínima capacidad del depósito de combustible para nuestro
+     * vehículo. Nos tocaría a nosotros indicar cuál sería la cantidad mínima y
+     * máxima y si no se cumplen estas condiciones no permitimos que se cree ese
+     * objeto. Son unos valores límite ya establecidos, parece más que
+     * justificado que se trate de atributos de clase y no de objeto. Se han
+     * declarado como public, Porque se trata de valores límite que son de
+     * interés para otros programadorque vaya a utilizar esta clase. Aunque se
+     * puede tener acceso a su valor, no podrán ser modificados por o que no hay
+     * riesgo de integridad.Es uno de los pocos casos en los que es positivo
+     * evitar la privacidad. Pues estamos dando información útil al usuario de
+     * esta clase y además no pueden ser modificados.
+     */
 }
