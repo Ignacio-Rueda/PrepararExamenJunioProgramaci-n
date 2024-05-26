@@ -1,9 +1,2 @@
-Emplead@:nombre=Juan, edad=28, sueldo=1950.0
-Emplead@:nombre=Sara, edad=25, sueldo=3500.0
-Emplead@:nombre=Lucía, edad=38, sueldo=2900.0
-Emplead@:nombre=Juan, edad=28, sueldo=1950.0
-Emplead@:nombre=Sara, edad=25, sueldo=3500.0
-Emplead@:nombre=Lucía, edad=38, sueldo=2900.0
-Emplead@:nombre=Juan, edad=28, sueldo=1950.0
-Emplead@:nombre=Sara, edad=25, sueldo=3500.0
-Emplead@:nombre=Lucía, edad=38, sueldo=2900.0
+Nombre:María DNI: 001 Edad: 33 Situación laboral: Desempleado Desempeña su labor en el sector: n/a
+Nombre:Carlos DNI: 002 Edad: 48 Situación laboral: Trabajando Desempeña su labor en el sector: publico
