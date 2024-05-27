@@ -1,3 +1,7 @@
+    
+    ----------------------------------------------------------------------------
+    UNIDAD:5
+    ----------------------------------------------------------------------------
     ----------------------------------------------------------------------------
     COMENTARIOS ATRIBUTOS
     ----------------------------------------------------------------------------
@@ -136,3 +140,37 @@
     Cada vez que utilicemos un método de una clase (incluido el constructor) debemos revisar si existe la
     posibilidad de que puedan lanzarse excepciones desde ese método en caso afirmativo:
     Habrá que encerrar la llamada a ese método en un bloque try-catch
+
+
+    ----------------------------------------------------------------------------
+    UNIDAD:6
+    ----------------------------------------------------------------------------
+    Hasta ahora los métodos de tipo get devolvían tipos primitivos, es decir
+    copias del contenido pero los atributos seguían a salvo.
+    Al tener objetos dentro de las clases y no solo tipos primitivos hay que obrar
+    con mucho cuidado. Si un método de la clase devuelve directamente un objeto que
+    es un atributo, estarás ofreciendo directamente una referencia a un objeto, que
+    probablemente hayas definido como privado, ¡Estás volviendo a hacer público un 
+    atributo que inicialmente era privado!
+    ¿Cómo evitar esta situación?:
+    - Devolver siempre tipos primitivos.
+    - Obligar a que los objetos contenidos que vayan a ser devueltos sean de clases inmutables
+    con lo cual aunque se tenga acceso a ellos, no podrán ser modificados (String y LocalDate son inmutables
+    ->Una vez que se crea una instancia de estos objetos(String y LocalDate), su valor no puede ser modifcado)
+    ->Los enum son un tipo especial de clase que define un conjunto de constantes.->Los valores de un enum son inmutables.   
+    - Crear un nuevo objeto, que sea una copia del atributo que quieres devolver
+    y utilizar ese objeto como valor de retorno. Es decir, crear una copia del objeto
+    especialmente para devolverlo.
+    
+    Sólo se crean objetos cuando se llama a un constructor, (uso de new) o bien
+    cuando se invocan métodos que sabemos positivamente que devuelven nuevas instancias
+    de objetos.Si realizas asignaciones o pasos de parámetros no se están copiando
+    o pasando copias de los objetos, sino simplemente las referencias y por tanto
+    se tratará siempre del mismo objeto
+
+    Del mismo modo ocurre, si nuestra clase dispone de métodos set qeu reciben como
+    parámetros referencias objetos, se producirá exactamente el mismo fenómeno:
+    si no se realiza una copia del objeto al que se hace referencia, es posible
+    que ese objeto en el futuro pueda ser modificado desde fuera de la clase
+
+    Los métodos estáticos o de clase no pueden ser sobrescritos.
