@@ -26,15 +26,31 @@ public class Test {
         }*/
         
         
-        Persona [] arrayPersona = new Persona[3];
+        Persona [] arrayPersona = new Persona[2];
         
         arrayPersona[0] = new Alumno("Ignacio","Rueda");
         arrayPersona[1] = new Profesor("Ramón","Rueda");
-        arrayPersona[2] = new Persona("Rafael","Armenteros");
+       // arrayPersona[2] = new Persona("Rafael","Armenteros");-> Porque la hice abstracta
         
         for(Persona p: arrayPersona){
             System.out.println(p.getNombre());
         }
+        
+        
+        //CONVERSIÓN EXPLÍCITA (CASTING):
+        
+        Persona p = new Alumno("Juan","Salvado");
+        
+        System.out.println(p instanceof Alumno);//true
+        System.out.println(p instanceof Profesor);//false
+        
+        if(p instanceof Alumno){
+            ((Alumno)p).jugar();
+        }
+        
+        
+        
+        
         
     }
 

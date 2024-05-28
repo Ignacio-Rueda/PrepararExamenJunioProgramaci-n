@@ -174,3 +174,17 @@
     que ese objeto en el futuro pueda ser modificado desde fuera de la clase
 
     Los métodos estáticos o de clase no pueden ser sobrescritos.
+
+    ----------------------------------------------------------------------------
+    Operador instanceof
+    ----------------------------------------------------------------------------
+    Como ya has visto, en principio no se puede acceder a los miembros específicos de una
+    subclase a través de una referencia a una superclase.
+    Si deseas tener acceso a todos los métodos y atributos específicos del objeto 
+    subclase tendrás que realizar una conversión explícita (casting) que convierta
+    la referencia más general (superclase) en la del tipo específico del objeto
+    (sublcase)
+
+    Para que pueda llevarse a cabo una conversión entre distintas clases es obligatorio
+    que exista una relación de herencia entre ellas (una debe ser clase derivada    
+    de la otra)

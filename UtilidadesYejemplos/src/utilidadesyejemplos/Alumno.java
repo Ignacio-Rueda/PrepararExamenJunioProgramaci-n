@@ -11,5 +11,10 @@ public class Alumno extends Persona{
         return String.format("El nombre del alumno es %s",this.nombre );
     }
     
+    public void jugar(){
+        System.out.printf("Alumno%s está jugando!%n",this.nombre);
+                
+    }
+    
     
 }
